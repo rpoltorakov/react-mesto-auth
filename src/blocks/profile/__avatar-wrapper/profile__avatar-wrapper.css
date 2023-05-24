@@ -1,0 +1,21 @@
+.profile__avatar-wrapper::before {
+  content: '';
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  background-image: url('../../../images/edit-profile.svg');
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.profile__avatar-wrapper:hover::before {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  visibility: visible;
+}

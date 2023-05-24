@@ -1,0 +1,11 @@
+.card {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}

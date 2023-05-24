@@ -1,0 +1,10 @@
+.card__title {
+  color: black;
+  max-width: 246px;
+  margin-bottom: 31px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 20px 24px 20px;
+}
