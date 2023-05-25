@@ -6,14 +6,12 @@ import Header from './Header'
 import Footer from './Footer'
 import { useNavigate } from 'react-router-dom'
 
-export default function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, onCardLike, onCardDelete, cards, loggedIn, email, onLogoutClick}) {
+export default function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, onCardLike, onCardDelete, cards, loggedIn, email, onSignOut}) {
   const userContext = React.useContext(CurrentUserContext)
   const navigate = useNavigate()
 
   function handleLogoutClick() {
-    localStorage.removeItem('jwt')
-    navigate('/sign-in', {replace: true})
-    onLogoutClick()
+    onSignOut()
   }
 
   return (

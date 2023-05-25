@@ -20,10 +20,7 @@ class Auth {
         email: email
       })
     })
-      // .then((res) => {
-      //   console.log('res in auth', res)
-      //   return res.json()
-      // })
+    .then(this._returnData())
   }
 
   login(email, password) {
@@ -35,14 +32,15 @@ class Auth {
         email: email
       })
     })
-      .then((response => response.json()))
-      .then((data) => {
-        if (data.token) {
-          localStorage.setItem('jwt', data.token)
-          return data
-        }
-      })
-      .catch(err => console.error(err))
+      .then(this._returnData())
+      // .then((response => response.json()))
+      // .then((data) => {
+      //   if (data.token) {
+      //     localStorage.setItem('jwt', data.token)
+      //     return data
+      //   }
+      // })
+      // .catch(err => console.error(err))
   }
 
   checkToken(jwt) {

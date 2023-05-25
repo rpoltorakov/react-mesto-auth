@@ -18,19 +18,7 @@ function Login({onLogin}) {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!email || !password) {
-      return
-    }
-    auth.login(email, password)
-      .then(res => {
-        if (res) {
-          setEmail('')
-          setPassword('')
-          onLogin()
-          navigate('/', {replace: true})
-        }
-      })
-      .catch(error => {console.error(error)})
+    onLogin(email, password)
   }
 
   return ( 
