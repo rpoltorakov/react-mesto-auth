@@ -33,14 +33,6 @@ class Auth {
       })
     })
       .then(this._returnData())
-      // .then((response => response.json()))
-      // .then((data) => {
-      //   if (data.token) {
-      //     localStorage.setItem('jwt', data.token)
-      //     return data
-      //   }
-      // })
-      // .catch(err => console.error(err))
   }
 
   checkToken(jwt) {

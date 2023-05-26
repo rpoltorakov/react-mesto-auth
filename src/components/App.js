@@ -22,7 +22,7 @@ function App() {
   const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
   const [isRegisterSuccess, setIsRegisterSuccess] = useState('')
   const [selectedCard, setSelectedCard] = useState({});
-  const [loggedIn, setLoggedIn] = useState();
+  const [loggedIn, setLoggedIn] = useState(false);
   const [authMessage, setAuthMessage] = useState()
 
   const [cards, setCards] = useState([])
@@ -55,7 +55,6 @@ function App() {
   }, [loggedIn])
 
   useEffect(() => {
-    if (loggedIn) {
       const jwt = localStorage.getItem('jwt')
       auth.checkToken(jwt)
         .then(data => {
@@ -64,8 +63,7 @@ function App() {
           navigate('/')
         })
         .catch(error => {console.error(error)})
-      }
-  }, [navigate, loggedIn]);
+  }, [navigate]);
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true)
